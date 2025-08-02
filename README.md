@@ -5,16 +5,16 @@ This LabVIEW-based web application uses LabVIEW code as the server and JavaScrip
 
 This web application is designed to remotely monitor and control LabVIEW-based ATE (Automated Test Equipment) systems. It consists of two parts:
 
-#### Server (LabVIEW): Runs on each test PC (ATE01, ATE02, etc.), exposing web services to deliver test status and front panel images.
+### Server (LabVIEW): 
+Runs on each test PC (ATE01, ATE02, etc.), exposing web services to deliver test status and front panel images.
 
-#### Client (Web Dashboard): A browser-based JavaScript application (HTML/CSS/JS) hosted separately, used to login and monitor multiple ATE systems from a centralized dashboard.
+### Client (Web Dashboard):
+A browser-based JavaScript application (HTML/CSS/JS) hosted separately, used to login and monitor multiple ATE systems from a centralized dashboard.
 
 ## System Architecture
 
-+--------------------+         HTTP POST Requests         +---------------------+
-| Web Client (User)  | <--------------------------------> | LabVIEW HTTP Server |
-| Runs in browser    |     (GetFP_Image, Request_Message) | (ATE01, ATE02...)    |
-+--------------------+                                     +---------------------+
+<code>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20250305115910231830/11.webp" alt="SYSTEM" title="System Architecture"/></code>
 
 ## Folder Structure
 
@@ -65,7 +65,7 @@ Each card shows status and a "View" button to monitor the test system
 
 📸 Screenshot Placeholder: Home Screen with ATE Cards
 
-3. Monitoring a Test System
+### 3. Monitoring a Test System
 
 Click View on any ATE card
 
@@ -79,7 +79,7 @@ Control buttons: Start, Pause, Terminate
 
 📸 Screenshot Placeholder: Monitor Screen with Controls and Image
 
-4. Commands to LabVIEW
+### 4. Commands to LabVIEW
 
 The following POST requests are sent from the web client:
 
@@ -95,7 +95,7 @@ Get Status - http://<ATE-IP>:8001/TSM_WebService/GetTestStatus <br>
 
 Send Command -  http://<ATE-IP>:8001/TSM_WebService/Request_Message <br>
 
-5. Logout
+### 5. Logout
 
 Click Logout in the left menu
 
